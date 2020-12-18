@@ -4,15 +4,14 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 while True:
     try:
-        number1 = float(input("Enter the first number:"))
-        number2 = float(input("Enter the second number:"))
+        number1 = float(input("Введите первое число:"))
+        number2 = float(input("Введите второе число:"))
     except ValueError:
         print("Некоректно введено значение, повторите попытку")
-        
-        print("Введеный символ может быть только числом")
-        number1 = float(input("Enter the first number:"))
-        number2 = float(input("Enter the second number:"))
-    x = input("Choose an action: + - / * ")
+        number1 = float(input("Введите первое число:"))
+        number2 = float(input("Введите второе число:"))
+    
+    x = input("Выберите действие: + - / * ")
 
     if x == "++":
         print("Error - Что то пошло не так повторите!!!")
@@ -46,7 +45,7 @@ while True:
         try:
             res = number1 / number2
         except ZeroDivisionError:
-            print("Нельзя делить на ноль!")
+            print("Деление на ноль запрещено!")
         break
 r = input("Введите знак равенства: ")    
 if r == "=":
