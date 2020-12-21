@@ -1,52 +1,43 @@
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-print("                 Calсulator                ")
+print("                 Calkulator                ")
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
+res = 0
 while True:
     try:
         number1 = float(input("Введите первое число:"))
         number2 = float(input("Введите второе число:"))
     except ValueError:
         print("Некоректно введено значение, повторите попытку")
-        number1 = float(input("Введите первое число:"))
-        number2 = float(input("Введите второе число:"))
-    
-    x = input("Выберите действие: + - / * ")
-
-    if x == "++":
-        print("Error - Что то пошло не так повторите!!!")
-        continue
-
-    elif x == "+":
-        res = number1 + number2
+        
+        print("Введеный символ может быть только числом")
+    else:
         break
 
-    elif x == "--":
-        print("Error - Что то пошло не так повторите ввод оператора!!!")
-        continue
+x = input("Введите оператор: ")
+while x not in ('+', "-", '*', '/', '='):
+    print("Оператор может быть только +,-,*,/ or =...")
+    x = input("Введите оператор: ")
 
-    elif x == "-":
-        res = number1 - number2
-        break
 
-    elif x == "**":
-        print("Error - Что то пошло не так повторите ввод оператора!!!")
-        continue
+if x == "+":
+    res = number1 + number2
 
-    elif x == "*":
-        res = number1 * number2
-        break
 
-    elif x == "//":
-        print("Error - Что то пошло не так повторите ввод оператора!!!")
-        continue
+elif x == "-":
+    res = number1 - number2
 
-    elif x == "/":
-        try:
-            res = number1 / number2
-        except ZeroDivisionError:
-            print("Деление на ноль запрещено!")
-        break
+
+elif x == "*":
+    res = number1 * number2
+
+
+elif x == "/":
+    try:
+        res = number1 / number2
+    except ZeroDivisionError:
+        print("Нельзя делить на ноль!")
+       
 r = input("Введите знак равенства: ")    
 if r == "=":
-    print(f"Результат будет {res}")
+    print(f"Результат: {res}")
