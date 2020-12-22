@@ -2,42 +2,32 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print("                 Calkulator                ")
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
+x = None
 res = 0
-while True:
+while x != "=":
     try:
-        number1 = float(input("Введите первое число:"))
-        number2 = float(input("Введите второе число:"))
+        number = float(input("Введите число: "))
     except ValueError:
-        print("Некоректно введено значение, повторите попытку")
-        
-        print("Введеный символ может быть только числом")
-    else:
-        break
-
-x = input("Введите оператор: ")
-while x not in ('+', "-", '*', '/', '='):
-    print("Оператор может быть только +,-,*,/ or =...")
-    x = input("Введите оператор: ")
-
-
-if x == "+":
-    res = number1 + number2
-
-
-elif x == "-":
-    res = number1 - number2
-
-
-elif x == "*":
-    res = number1 * number2
-
-
-elif x == "/":
-    try:
-        res = number1 / number2
-    except ZeroDivisionError:
-        print("Нельзя делить на ноль!")
-       
-r = input("Введите знак равенства: ")    
-if r == "=":
-    print(f"Результат: {res}")
+        print("Введите число дробное либо целое")
+        continue
+    if x == None:
+        res = number
+    elif x == "+":
+        res += number
+    elif x == "-":
+        res -= number
+    elif x == "*":
+        res *= number
+    elif x == "/":
+        try:
+            res /= number
+        except ZeroDivisionError:
+            print("Нельзя делить на ноль")
+            continue
+    x = input("Введите операнд: ")
+    while x not in ('+', "-", '*', '/', '='):
+        print("Неправельный операнд, попробуйте снова +,-,*,/ or =...")
+        x = input("Введите операнд: ")
+    if x == "=":
+        continue
+print(f"Результат = {res} ")
