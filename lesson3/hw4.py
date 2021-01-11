@@ -12,32 +12,30 @@ music = []
 images = []
 video = []
 documents = []
-other_files =[]
+other_files = []
 
 
 
-audio_file_format = {".mp3", ".ogg", ".wav", ".amr"}
-image_file_format = {".jpeg",".png", ".jpg"}
-video_file_format = {".avi", ".mp4", ".mov"}
-documents_file_format = {".doc", ".docx",".txt"}
-
+audio_file_format = ('MP3', 'OGG', 'WAV', 'AMR')
+image_file_format = ('JPEG', 'PNG', 'JPG')
+video_file_format = ('AVI', 'MP4', 'MOV')
+documents_file_format = ('DOC', 'DOCX', 'TXT')
 
 
 for file in files:
-    if 'jpeg' in file or 'png' in file or 'jpg' in file:
+    if file.endswith('.mp3') or file.endswith('ogg') or file.endswith('.wav') or file.endswith('.amr'):
+        music.append(file)          
+    elif file.endswith('.jpeg') or file.endswith('.png') or file.endswith('.jpg'):
         images.append(file)
-
-    elif 'avi' in file or 'mp4' in file or 'mov' in file:
+    elif file.endswith('.avi') or file.endswith('.mp4') or file.endswith('.mov'):
         video.append(file)
-
-    elif 'doc' in file or 'docx' in file or 'txt' in file:
+    elif file.endswith('.doc') or file.endswith('.docx') or file.endswith('.txt'):
         documents.append(file)
-
-    elif 'mp3' in file or 'ogg' in file or 'wav' in file or 'amr' in file :
-        music.append(file)
-
     else:
-        other_files.append(file)
+        other_files.append(file)              
+
+    
+
 
    
     
@@ -46,4 +44,5 @@ print("_____________________________________")
 print(f"music: {music}")
 print(f"images: {images}")
 print(f"video: {video}")
-print(f"documents: {documents}")	          
+print(f"documents: {documents}") 
+print(f"other_files: {other_files}") 	          
