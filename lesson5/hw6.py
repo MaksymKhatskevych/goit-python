@@ -10,9 +10,9 @@ def translated():
     ord('н'): 'n', ord('о'): 'o', ord('п'): 'p', ord('р'): 'r', ord('с'): 's', ord('т'): 't', ord('у'): 'u',
     ord('ф'): 'f', ord('х'): 'h', ord('ч'): 'ch', ord('ш'): 'sh', ord('щ'): 'sh', ord('ъ'): '_', ord('ы'): 'y',
         ord('ь'): '_', ord('э'): 'e', ord('ю'): 'ju', ord('я'): 'ja'}
-
-    new = ""
     res = []
+   
+
     for char in translated:
 
         if char == char.upper():
@@ -22,6 +22,7 @@ def translated():
         elif char == char.lower():
             new = char.translate(map)
         res.append(new)
-        res = re.sub(r'(\W)', '_', ''.join(my_list))
+    res = re.sub(r'(\W)', '_', ''.join(res))
+ 
 
     return res
