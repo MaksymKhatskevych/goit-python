@@ -2,7 +2,7 @@ import re
 
 def translated():
 
-    new global
+    global new
 
     translated = input("Введите текст для перевода: ")
     map = {ord('a'): 'a', ord('б'): 'b', ord('в'): 'v', ord('г'): 'g', ord('д'): 'd', ord('е'): 'e', ord('ё'): 'io',
